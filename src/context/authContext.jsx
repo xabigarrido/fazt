@@ -60,8 +60,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLogin = async () => {
       const cookies = Cookies.get();
-      document.cookie = `token=${cookies.token}; path=/; max-age=3600`;
-      document.cookie = `pruebaFront=${cookies.token}; path=/; max-age=3600`;
       if (!cookies.token) {
         setIsAuthenticated(false);
         setLoading(false);
