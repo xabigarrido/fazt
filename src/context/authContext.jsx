@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }) => {
       const res = await loginRequest(user);
       setUser(res.data);
       setIsAuthenticated(true);
+      document.cookie = "pruebaFront=valor; path=/; max-age=3600";
     } catch (error) {
       console.log(error);
       // setErrors(error.response.data.message);
